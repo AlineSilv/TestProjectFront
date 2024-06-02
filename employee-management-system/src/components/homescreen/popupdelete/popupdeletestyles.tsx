@@ -34,15 +34,10 @@ export const PopupFooter = styled.div`
   margin-top: 1rem;
 `;
 
-export const Button = styled.button<{ danger?: boolean }>`
+export const Button = styled.button`
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
-  background-color: ${({ danger }) => (danger ? '#ff5722' : '#ccc')};
-  color: white;
+  color: black;
   cursor: pointer;
-
-  &:hover {
-    background-color: ${({ danger }) => (danger ? '#e64a19' : '#aaa')};
-  }
 `;

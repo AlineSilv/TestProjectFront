@@ -11,8 +11,13 @@ const ModalEdit: React.FC<{ onClose: () => void, employee: any }> = ({ onClose, 
   };
 
   const handleSubmit = async () => {
+    const token = localStorage.getItem("emcash_token");
     try {
-      await api.patch(`/funcionario/${employee.id}`, formData);
+      await api.patch(`/funcionario/${employee.id}`, formData, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
       onClose();
       window.location.reload(); // Recarregar a página para refletir a mudança
     } catch (error) {

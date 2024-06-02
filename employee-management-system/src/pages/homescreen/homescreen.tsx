@@ -7,24 +7,12 @@ import PopupDelete from '../../components/homescreen/popupdelete/popupdelete';
 import { HomeContainer } from './homescreenstyles';
 import api from '../../services/api/api';
 
+
 const HomeScreen: React.FC = () => {
   const [showAddNew, setShowAddNew] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState<any>(null);
-
-  const handleDelete = async () => {
-    if (selectedEmployee) {
-      try {
-        await api.delete(`/funcionario/${selectedEmployee.id}`);
-        // Atualize a lista de funcionários aqui, se necessário
-        setShowDelete(false);
-        window.location.reload(); // Recarregar a página para refletir a mudança
-      } catch (error) {
-        console.error('Error deleting employee', error);
-      }
-    }
-  };
 
   return (
     <HomeContainer>
@@ -41,7 +29,7 @@ const HomeScreen: React.FC = () => {
       />
       {showAddNew && <ModalAddNew onClose={() => setShowAddNew(false)} />}
       {showEdit && <ModalEdit onClose={() => setShowEdit(false)} employee={selectedEmployee} />}
-      {showDelete && <PopupDelete onClose={() => setShowDelete(false)} onDelete={handleDelete} />}
+      {showDelete && <PopupDelete employee={selectedEmployee} onClose={() => setShowDelete(false)}/>}
     </HomeContainer>
   );
 };
