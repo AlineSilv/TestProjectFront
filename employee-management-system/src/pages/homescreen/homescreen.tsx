@@ -7,7 +7,6 @@ import PopupDelete from '../../components/homescreen/popupdelete/popupdelete';
 import { HomeContainer } from './homescreenstyles';
 import api from '../../services/api/api';
 
-
 const HomeScreen: React.FC = () => {
   const [showAddNew, setShowAddNew] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -29,7 +28,7 @@ const HomeScreen: React.FC = () => {
       />
       {showAddNew && <ModalAddNew onClose={() => setShowAddNew(false)} />}
       {showEdit && <ModalEdit onClose={() => setShowEdit(false)} employee={selectedEmployee} />}
-      {showDelete && <PopupDelete employee={selectedEmployee} onClose={() => setShowDelete(false)}/>}
+      {showDelete && <PopupDelete employee={selectedEmployee} onClose={() => setShowDelete(false)} />}
     </HomeContainer>
   );
 };

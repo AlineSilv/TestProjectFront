@@ -53,3 +53,9 @@ export const Button = styled.button`
     background-color: #e64a19;
   }
 `;
+
+export const ErrorMessage = styled.span`
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+`;
