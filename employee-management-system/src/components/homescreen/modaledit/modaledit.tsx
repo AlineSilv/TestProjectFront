@@ -25,9 +25,9 @@ const ModalEdit: React.FC<{ onClose: () => void, employee: any }> = ({ onClose, 
       <ModalContent>
         <ModalHeader>Editar Funcionário</ModalHeader>
         <ModalBody>
-          <Input type="text" name="name" value={formData.name} placeholder="Nome completo" onChange={handleChange} />
+          <Input type="text" name="nome" value={formData.nome} placeholder="Nome completo" onChange={handleChange} />
           <Input type="text" name="cpf" value={formData.cpf} placeholder="CPF/CNPJ" onChange={handleChange} />
-          <Input type="text" name="phone" value={formData.phone} placeholder="Celular" onChange={handleChange} />
+          <Input type="text" name="celular" value={formData.celular} placeholder="Celular" onChange={handleChange} />
           <Input type="email" name="email" value={formData.email} placeholder="E-mail" onChange={handleChange} />
         </ModalBody>
         <ModalFooter>
