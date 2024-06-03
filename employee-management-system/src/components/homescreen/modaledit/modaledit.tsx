@@ -3,12 +3,24 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import api from '../../../services/api/api';
-import { ModalContainer, ModalContent, ModalHeader, ModalBody, ModalFooter, Input, Button, ErrorMessage } from './modaleditstyles';
+import { 
+  ModalContainer, 
+  ModalContent, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter, 
+  FormGroup, 
+  Label, 
+  Input, 
+  Button,
+  ButtonCancel,
+  ErrorMessage 
+} from './modaleditstyles';
 
 const schema = z.object({
   nome: z.string().min(3, "Este campo é obrigatório"),
-  cpf: z.string().min(11, "Um CPF valido deve conter no minimo 11 caracteres"),
-  celular: z.string().min(10, "Um numero valido deve conter no minimo 10 caracteres"),
+  cpf: z.string().min(11, "Um CPF válido deve conter no mínimo 11 caracteres"),
+  celular: z.string().min(10, "Um número válido deve conter no mínimo 10 caracteres"),
   email: z.string().email("Formato de e-mail inválido"),
 });
 
@@ -40,18 +52,33 @@ const ModalEdit: React.FC<{ onClose: () => void, employee: any }> = ({ onClose, 
       <ModalContent>
         <ModalHeader>Editar Funcionário</ModalHeader>
         <ModalBody>
-          <Input type="text" {...register('nome')} placeholder="Nome completo" />
-          {errors.nome && <ErrorMessage>{errors.nome.message}</ErrorMessage>}
-          <Input type="text" {...register('cpf')} placeholder="CPF/CNPJ" />
-          {errors.cpf && <ErrorMessage>{errors.cpf.message}</ErrorMessage>}
-          <Input type="text" {...register('celular')} placeholder="Celular" />
-          {errors.celular && <ErrorMessage>{errors.celular.message}</ErrorMessage>}
-          <Input type="email" {...register('email')} placeholder="E-mail" />
-          {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+          <FormGroup>
+            <Input type="text" id="nome" {...register('nome')} placeholder=" " />
+            <Label htmlFor="nome">Nome completo</Label>
+            {errors.nome && <ErrorMessage>{errors.nome.message}</ErrorMessage>}
+          </FormGroup>
+
+          <FormGroup>
+            <Input type="text" id="cpf" {...register('cpf')} placeholder=" " />
+            <Label htmlFor="cpf">CPF/CNPJ</Label>
+            {errors.cpf && <ErrorMessage>{errors.cpf.message}</ErrorMessage>}
+          </FormGroup>
+
+          <FormGroup>
+            <Input type="text" id="celular" {...register('celular')} placeholder=" " />
+            <Label htmlFor="celular">Celular</Label>
+            {errors.celular && <ErrorMessage>{errors.celular.message}</ErrorMessage>}
+          </FormGroup>
+
+          <FormGroup>
+            <Input type="email" id="email" {...register('email')} placeholder=" " />
+            <Label htmlFor="email">E-mail</Label>
+            {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+          </FormGroup>
         </ModalBody>
         <ModalFooter>
-          <Button onClick={onClose}>Cancelar</Button>
-          <Button onClick={handleSubmit(onSubmit)}>Salvar Alterações</Button>
+          <ButtonCancel className="cancel" onClick={onClose}>Cancelar</ButtonCancel>
+          <Button className="save" onClick={handleSubmit(onSubmit)}>Salvar Alterações</Button>
         </ModalFooter>
       </ModalContent>
     </ModalContainer>

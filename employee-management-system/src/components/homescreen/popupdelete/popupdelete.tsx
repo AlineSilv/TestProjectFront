@@ -1,5 +1,5 @@
 import React from 'react';
-import { PopupContainer, PopupContent, PopupHeader, PopupBody, PopupFooter, Button } from './popupdeletestyles';
+import { PopupContainer, PopupContent, PopupHeader, PopupBody, PopupFooter, Button, ButtonCancel } from './popupdeletestyles';
 import api from '../../../services/api/api';
 import { AxiosError } from 'axios';
 
@@ -47,13 +47,15 @@ const PopupDelete: React.FC<PopupDeleteProps> = ({ onClose, employee }) => {
   return (
     <PopupContainer>
       <PopupContent>
-        <PopupHeader>Apagar Funcionário</PopupHeader>
-        <PopupBody>Esta ação é irreversível. Tem certeza que deseja apagar este funcionário do sistema?</PopupBody>
-        <PopupFooter>
-          <Button onClick={onClose}>Cancelar</Button>
-          <Button onClick={handleDelete}>Apagar</Button>
+          <PopupHeader>Apagar Funcionário</PopupHeader>
+          <PopupBody>Esta ação é irreversível. Tem certeza que deseja apagar este funcionário do sistema?</PopupBody>
+          <PopupFooter>
+            <ButtonCancel onClick={onClose}>Cancelar</ButtonCancel>
+            <Button onClick={handleDelete}>Apagar</Button>
         </PopupFooter>
       </PopupContent>
+      
+        
     </PopupContainer>
   );
 };

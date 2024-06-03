@@ -14,30 +14,68 @@ export const PopupContainer = styled.div`
 
 export const PopupContent = styled.div`
   background-color: white;
-  padding: 2rem;
   border-radius: 5px;
   width: 400px;
-  text-align: center;
+  height:230px;
 `;
 
+
 export const PopupHeader = styled.h2`
-  margin-bottom: 1rem;
+margin-left:10%;
+font-family: 'Manrope', sans-serif;
+width:100%;
+justify-content: flex-start;
+font-size: 20px;
+margin-bottom: 32px;
 `;
 
 export const PopupBody = styled.p`
-  margin-bottom: 1rem;
+width:350px;
+margin-left:10%;
+align-items:center;
+justify-content: flex-start;
+'Public Sans', sans-serif;
+font-size: 16px;
+text-align:left;
+
+
 `;
 
 export const PopupFooter = styled.div`
+  width:350px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+  justify-content: flex-end;
+  align-items:flex-end;
+  margin-top:32px;
+  margin-bottom:32px;
 `;
 
 export const Button = styled.button`
-  padding: 0.5rem 1rem;
+  width:85px;
   border: none;
+  height:44px;
   border-radius: 5px;
-  color: black;
+  background-color: #ff5722;
+  color: white;
   cursor: pointer;
+
+  &:hover {
+    background-color: #e64a19;
+  }
+`;
+
+
+export const ButtonCancel = styled.button`
+width:85px;
+height:44px;
+margin-right:20px;
+border: none;
+background: none;
+color: orange;
+cursor: pointer;
+
+&:hover {
+  background-color: #eeee;
+  border-radius: 5px;
+}
 `;
