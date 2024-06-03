@@ -1,5 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; 
+import { describe, test, expect, jest } from '@jest/globals';
+import '@testing-library/jest-dom/extend-expect';
+import "@testing-library/jest-dom";
+import React from 'react';
 import Header from '../../src/components/homescreen/headerhomescreen/headerhomescreen';
 
 jest.mock('../../src/components/homescreen/popuplogout', () => () => <div data-testid="PopupLogout">Popup Logout</div>);
