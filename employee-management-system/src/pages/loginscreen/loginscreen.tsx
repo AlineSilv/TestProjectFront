@@ -105,9 +105,6 @@ const LoginScreen: React.FC = () => {
             </FooterText>
           </LoginForm>
         </ContentRight>
-        
-        
-        
         <HelpText>
           <Link href="#">Precisa de ajuda?</Link>
         </HelpText>

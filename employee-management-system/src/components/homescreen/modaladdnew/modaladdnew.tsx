@@ -30,7 +30,7 @@ const ModalAddNew: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         },
       });
       onClose();
-      window.location.reload(); // Recarregar a página para refletir a mudança
+      window.location.reload(); 
     } catch (error) {
       console.error('Error adding employee', error);
     }

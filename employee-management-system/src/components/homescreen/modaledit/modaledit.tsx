@@ -18,10 +18,10 @@ import {
 } from './modaleditstyles';
 
 const schema = z.object({
-  nome: z.string().min(3, "Este campo é obrigatório"),
-  cpf: z.string().min(11, "Um CPF válido deve conter no mínimo 11 caracteres"),
-  celular: z.string().min(10, "Um número válido deve conter no mínimo 10 caracteres"),
-  email: z.string().email("Formato de e-mail inválido"),
+  nome: z.string().min(3, "Campo obrigatório em valor válido."),
+  cpf: z.string().min(11, "Campo obrigatório em valor válido."),
+  celular: z.string().min(10, "Campo obrigatório em valor válido."),
+  email: z.string().email("Formato de e-mail inválido."),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -41,7 +41,7 @@ const ModalEdit: React.FC<{ onClose: () => void, employee: any }> = ({ onClose, 
         },
       });
       onClose();
-      window.location.reload(); // Recarregar a página para refletir a mudança
+      window.location.reload(); 
     } catch (error) {
       console.error('Error updating employee', error);
     }

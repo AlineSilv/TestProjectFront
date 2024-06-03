@@ -51,9 +51,9 @@ export const ModalFooter = styled.div`
 
 export const Input = styled.input`
   width:300px;
-  height:55px;
+  height:40px;
   padding: 0.5rem;
-  margin-bottom:24px;
+  margin-bottom:20px;
   border: 1px solid #1B1B1B;
   border-radius: 12px;
   font-size: 1rem;
@@ -98,7 +98,10 @@ cursor: pointer;
 `;
 
 export const ErrorMessage = styled.span`
-  color: red;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+height:15px;
+width:100%;
+margin-left:10%;
+color: red;
+font-size: 0.875rem;
+margin-bottom:4px;
 `;

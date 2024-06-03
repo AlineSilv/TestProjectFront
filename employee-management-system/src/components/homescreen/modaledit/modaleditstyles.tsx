@@ -75,9 +75,9 @@ export const Label = styled.label`
 
 export const Input = styled.input`
 width:300px;
-height:40px;
+height:35px;
 padding: 0.5rem;
-margin-bottom:20px;
+margin-bottom:15px;
 border: 1px solid #1B1B1B;
 border-radius: 12px;
 font-size: 1rem;
@@ -123,7 +123,10 @@ cursor: pointer;
 `;
 
 export const ErrorMessage = styled.span`
+  height:10px;
+  width:100%;
+  margin-left:10%;
   color: red;
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  margin-bottom:4px;;
 `;
