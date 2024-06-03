@@ -16,7 +16,7 @@ O Employee Management System é uma aplicação web para gerenciar funcionários
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/employee-management-system.git
+    git clone [https://github.com/AlineSilv/TestProjectFront.git]
     ```
 2. Navegue até o diretório do projeto:
     ```sh
