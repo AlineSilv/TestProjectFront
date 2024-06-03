@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onAddNew }) => {
         <UserContainer>
           <UserIcon src="/assets/homescreen/usercircle.svg"/>
           <UserGreeting>Olá, EmCasher</UserGreeting>
-          <ExitIcon src="/assets/homescreen/exiticonhomescreen.svg" onClick={() => setShowLogout(true)} />
+          <ExitIcon src="/assets/homescreen/exiticonhomescreen.svg"  data-testid="exit-icon" onClick={() => setShowLogout(true)} />
         </UserContainer>
       </HeaderContainer>
       <BodyContainer>
