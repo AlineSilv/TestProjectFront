@@ -11,6 +11,7 @@ O Employee Management System é uma aplicação web para gerenciar funcionários
 - **Axios**: Cliente HTTP baseado em promessas para fazer requisições.
 - **Styled Components**: Biblioteca para estilização de componentes em React.
 - **React Router**: Biblioteca para roteamento em aplicações React.
+- **Jest**: Ferramenta para testes.
 
 ## Instalação
 
