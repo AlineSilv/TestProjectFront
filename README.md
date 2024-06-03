@@ -1,3 +1,4 @@
+
 # Employee Management System
 
 ## Descrição
@@ -11,13 +12,14 @@ O Employee Management System é uma aplicação web para gerenciar funcionários
 - **Axios**: Cliente HTTP baseado em promessas para fazer requisições.
 - **Styled Components**: Biblioteca para estilização de componentes em React.
 - **React Router**: Biblioteca para roteamento em aplicações React.
-- **Jest**: Ferramenta para testes.
+- **Jest**: Framework de testes em JavaScript.
+- **Testing Library**: Conjunto de utilitários para teste de componentes React.
 
 ## Instalação
 
 1. Clone o repositório:
     ```sh
-    git clone [https://github.com/AlineSilv/TestProjectFront.git]
+    git clone https://github.com/seu-usuario/employee-management-system.git
     ```
 2. Navegue até o diretório do projeto:
     ```sh
@@ -27,6 +29,92 @@ O Employee Management System é uma aplicação web para gerenciar funcionários
     ```sh
     npm install
     ```
+
+## Configuração do Jest
+
+1. Instale as dependências de desenvolvimento para o Jest:
+    ```sh
+    npm install --save-dev jest jest-environment-jsdom @types/jest @testing-library/react @testing-library/jest-dom ts-jest
+    ```
+2. Inicialize o Jest:
+    ```sh
+    npx jest --init
+    ```
+
+3. Adicione o seguinte conteúdo no arquivo `setupTests.ts`:
+    ```typescript
+    import '@testing-library/jest-dom';
+    ```
+
+4. Configure o `tsconfig.json` com as seguintes opções:
+    ```json
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "types": ["reflect-metadata", "@types/jest","@testing-library/jest-dom"],
+        "typeRoots": ["./types", "./node_modules/@types"]
+      },
+      "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
+      "include": ["./src/**/*.tsx", "./src/**/*.ts", "src", "./*.test.tsx"]
+    }
+    ```
+
+5. Crie um arquivo `jest.config.ts` com a seguinte configuração:
+    ```typescript
+    import type { Config } from '@jest/types';
+
+    const config: Config.InitialOptions = {
+      roots: ["<rootDir>/src", "<rootDir>/"],
+      transform: {
+        '^.+\\.tsx?$': 'ts-jest',
+      },
+      moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+      preset: 'ts-jest',
+      testEnvironment: 'jsdom',
+      clearMocks: true,
+      collectCoverage: true,
+      coverageDirectory: "coverage",
+      coverageProvider: "v8",
+      testMatch: ["**/__tests__/**/*.tsx"],
+      setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+    };
+
+    export default config;
+    ```
+
+## Execução
+
+1. Inicie o servidor de desenvolvimento:
+    ```sh
+    npm start
+    ```
+2. Abra [http://localhost:3000](http://localhost:3000) no navegador para ver a aplicação.
+
+## Executando Testes
+
+1. Para rodar os testes, use o comando:
+    ```sh
+    npm test
+    ```
+
+## Estrutura do Projeto
+
+O projeto segue a seguinte estrutura de pastas:
+
 
 ## Execução
 
