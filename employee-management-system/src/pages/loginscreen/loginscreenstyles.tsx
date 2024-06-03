@@ -1,20 +1,31 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width:100%;
   display: flex;
   height: 100vh;
-  background-color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+
+  @media (max-width: 800px) {
+    flex-direction: column; 
+  }
 `;
 
 export const LeftSide = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background-color: #f5f5f5;
+  justify-content: space-between;
 `;
+
+export const ContentLeft = styled.div`
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+ 
+`;
+
 
 export const RightSide = styled.div`
   flex: 1;
@@ -24,39 +35,93 @@ export const RightSide = styled.div`
   align-items: center;
   padding: 2rem;
   background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 `;
 
+export const ContentRight = styled.div`
+width:300px;
+height:500px;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`;
+
+
 export const Logo = styled.h1`
+  display: flex;
+  align-items: flex-end;
+  height:auto;
   color: #f60;
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-family: 'Manrope', sans-serif;
+  span{
+    color:black;
+  }
+  margin-top: 2rem;
+  margin-left:10%;
 `;
+export const FormTop = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 350px;
+max-width: 400px;
+`;
+
+export const Title = styled.p`
+  color: #f60;
+  font-weight:600;
+  font-size: 36px;
+  margin-bottom: 30px;
+`;
+
+export const Subtitle = styled.p`
+  font-family: 'Public Sans', sans-serif;
+  color: #1B1B1B;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+`;
+
 
 export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 300px;
   max-width: 400px;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
+
+  input {
+    width: 200px;
+    padding: 0.75rem;
+    margin-bottom:24px;
+    border: 1px solid #1B1B1B;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input::placeholder {
+    color: black;
+  }
+
+  input:focus {
+    border-color: orange; 
+    outline: none; 
+  }
 `;
 
-export const Input = styled.input`
-  width: 100%;
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-`;
+export const Input = styled.input``;
 
 export const Button = styled.button`
-  width: 100%;
+  width: 200px;
   padding: 0.75rem;
-  margin-top: 1rem;
+  margin-bottom:24px;
   border: none;
   border-radius: 5px;
   background-color: #f60;
@@ -71,24 +136,28 @@ export const Button = styled.button`
 
 export const ErrorMessage = styled.div`
   color: red;
-  margin-top: 0.5rem;
 `;
 
-export const Title = styled.h2`
-  color: #f60;
-  margin-bottom: 1rem;
+export const ForgotPassword = styled.p`
+width: 200px;
+display: flex;
+justify-content: flex-end; 
+color: #666;
+font-size: 0.875rem;
 `;
 
-export const Subtitle = styled.p`
-  color: #666;
-  margin-bottom: 2rem;
-  text-align: center;
-`;
 
 export const FooterText = styled.p`
-  margin-top: 1rem;
   color: #666;
   font-size: 0.875rem;
+`;
+
+export const HelpText = styled.p`
+  color: #666;
+  font-size: 0.875rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; 
 `;
 
 export const Link = styled.a`
@@ -101,14 +170,25 @@ export const Link = styled.a`
 `;
 
 export const Illustration = styled.img`
-  width: 100%;
-  max-width: 500px;
+  flex:1;
+  position:fixed;
+  max-width: 80%;
   margin-bottom: 2rem;
+
+  @media (max-width: 800px) {
+    display: none;
+   }
 `;
 
 export const SmallText = styled.p`
+  font-family: 'Public Sans', sans-serif;
+  margin-left:10%;
   margin-top: 1rem;
-  color: #666;
-  font-size: 0.875rem;
-  text-align: center;
+  color: #1B1B1B;
+  font-size: 1rem;
+  text-align: start;
+
+  @media (max-width: 800px) {
+    text-align: center;
+   }
 `;

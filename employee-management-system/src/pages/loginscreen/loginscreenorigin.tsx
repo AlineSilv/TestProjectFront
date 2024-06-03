@@ -3,9 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Container,
   LeftSide,
-  ContentLeft,
   RightSide,
-  ContentRight,
   Logo,
   LoginForm,
   Input,
@@ -17,9 +15,6 @@ import {
   Link,
   Illustration,
   SmallText,
-  ForgotPassword,
-  HelpText,
-  FormTop
 } from './loginscreenstyles';
 import api from '../../services/api/api';
 //import { fakeAuth } from '../../services/loginscreenservice/authService'; 
@@ -70,47 +65,39 @@ const LoginScreen: React.FC = () => {
   return (
     <Container>
       <LeftSide>
-        <Logo><span>front-end-</span>emcash</Logo>
-        <ContentLeft>
+        <Logo>front-end-emcash</Logo>
         <Illustration src="/assets/loginscreen/illustrationloginscreen.svg" alt="Illustration" />
-        </ContentLeft>
         <SmallText>O investimento evoluiu. O empréstimo também.</SmallText>
       </LeftSide>
+      
       <RightSide>
-        <ContentRight>
-          <FormTop>
-            <Title>Seja bem-vindo!</Title>
-          <Subtitle>Insira os seus dados nos campos abaixo para acessar a sua conta.</Subtitle>
-          </FormTop>
-          <LoginForm>
-            <Input
-              type="text"
-              placeholder="Usuário"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <Input
-              type="password"
-              placeholder="Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <ForgotPassword>
-              <Link href="#">Esqueci minha senha</Link>
-            </ForgotPassword>
-            {error && <ErrorMessage>{error}</ErrorMessage>}
-            <Button onClick={handleLogin}>Entrar</Button>
-            <FooterText>
-            Ainda não tem conta? <Link href="#">Cadastrar</Link>
-            </FooterText>
-          </LoginForm>
-        </ContentRight>
-        
-        
-        
-        <HelpText>
+        <Title>Seja bem-vindo!</Title>
+        <Subtitle>Insira os seus dados nos campos abaixo para acessar a sua conta.</Subtitle>
+        <LoginForm>
+          <Input
+            type="text"
+            placeholder="Usuário"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+          <Button onClick={handleLogin}>Entrar</Button>
+        </LoginForm>
+        <FooterText>
+          <Link href="#">Esqueci minha senha</Link>
+        </FooterText>
+        <FooterText>
+          Ainda não tem conta? <Link href="#">Cadastrar</Link>
+        </FooterText>
+        <FooterText>
           <Link href="#">Precisa de ajuda?</Link>
-        </HelpText>
+        </FooterText>
       </RightSide>
     </Container>
   );
