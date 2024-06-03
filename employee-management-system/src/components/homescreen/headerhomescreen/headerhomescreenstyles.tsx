@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const GeneralContainer = styled.div`
 width: 100%;
-max-width: 1200px;
 margin-bottom: 1.5rem;
 `;
 
@@ -10,16 +9,21 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
   margin-bottom: 1.5rem;
   background-color: #fff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 4px rgba(0, 1, 1, 0.1);
+
+  @media (max-width: 600px) {
+    flex-direction: column; 
+    justify-content:space-between;
+  }
 `;
 
 export const Logo = styled.div`
+  margin-left:10%;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: #ff5722;
@@ -27,13 +31,25 @@ export const Logo = styled.div`
   span {
     color: black;
   }
+
+  @media (max-width: 600px) {
+    width:100%;
+    align-items:flex-start;
+    margin-bottom:1rem;
+  }
 `;
 
 export const UserContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-width:auto;
+
+@media (max-width: 600px) {
+  align-items:flex-end;
+  justify-content: flex-end;
+  margin-bottom:1rem;
+  width:100%;
+}
 `;
 
 export const UserIcon = styled.img`
@@ -41,6 +57,7 @@ width:20px;
 `;
 
 export const UserGreeting = styled.div`
+font-family: 'Public Sans', sans-serif;
 padding-left:15px;
 padding-right:20px;
 font-size: 1rem;
@@ -52,6 +69,7 @@ padding-right:20px;
 width:20px;
 `;
 export const BodyContainer = styled.div`
+margin-left:10%;
 display: flex;
 aling-items:start;
 align-items: center;
@@ -59,6 +77,7 @@ width:auto;
 `;
 
 export const LabelTitle = styled.p`
+font-family: 'Manrope', sans-serif;
 padding-right: 20px;
 font-size: 1.5rem;
 font-weight: bold;
