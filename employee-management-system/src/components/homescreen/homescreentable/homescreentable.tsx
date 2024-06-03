@@ -3,7 +3,25 @@ import api from '../../../services/api/api';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { TableContainer, TableRow, TableHeader, TableCell, EditButton, DeleteButton, EditIconTable, DeleteIconTable, BoxIcon, EyeOpenIcon } from './homescreentablestyles';
+import { TableContainer, 
+  TableRow, 
+  TableHeader, 
+  TableCell, 
+  EditButton, 
+  DeleteButton, 
+  EditIconTable, 
+  DeleteIconTable, 
+  BoxIcon, 
+  EyeOpenIcon, 
+  TableHeaderNome, 
+  TableCellNome, 
+  TableHeaderBox,
+  TableHeaderEdit,
+  TableHeaderDelete,
+  TableCellBox,
+  TableCellButton
+
+} from './homescreentablestyles';
 
 interface Employee {
   id: string;
@@ -44,33 +62,33 @@ const Table: React.FC<TableProps> = ({ onEdit, onDelete }) => {
     <TableContainer>
       <thead>
         <TableRow>
-          <TableHeader><BoxIcon src="/assets/homescreen/iconboxtoselect.svg" /></TableHeader>
-          <TableHeader>Nome completo</TableHeader>
+          <TableHeaderBox><BoxIcon src="/assets/homescreen/iconboxtoselect.svg" /></TableHeaderBox>
+          <TableHeaderNome>Nome completo</TableHeaderNome>
           <TableHeader>CPF/CNPJ<EyeOpenIcon src="/assets/homescreen/iconeyeon.svg"/></TableHeader>
           <TableHeader>Celular</TableHeader>
           <TableHeader>E-mail</TableHeader>
-          <TableHeader>Editar</TableHeader>
-          <TableHeader>Apagar</TableHeader>
+          <TableHeaderEdit>Editar</TableHeaderEdit>
+          <TableHeaderDelete>Apagar</TableHeaderDelete>
         </TableRow>
       </thead>
       <tbody>
         {employees.map((employee) => (
           <TableRow key={employee.id}>
-            <TableCell><BoxIcon src="/assets/homescreen/iconboxtoselect.svg" /></TableCell>
-            <TableCell>{employee.nome}</TableCell>
+            <TableCellBox><BoxIcon src="/assets/homescreen/iconboxtoselect.svg" /></TableCellBox>
+            <TableCellNome>{employee.nome}</TableCellNome>
             <TableCell>{employee.cpf}</TableCell>
             <TableCell>{employee.celular}</TableCell>
             <TableCell>{employee.email}</TableCell>
-            <TableCell>
+            <TableCellButton>
               <EditButton onClick={() => onEdit(employee)}>
-                <EditIconTable />
+                <EditIconTable src="/assets/homescreen/editiconhomescreen.svg" />
               </EditButton>
-            </TableCell>
-            <TableCell>
+            </TableCellButton>
+            <TableCellButton>
               <DeleteButton onClick={() => onDelete(employee)}>
-                <DeleteIconTable />
+                <DeleteIconTable src="/assets/homescreen/deleteiconhomescreen.svg" />
               </DeleteButton>
-            </TableCell>
+            </TableCellButton>
           </TableRow>
         ))}
       </tbody>

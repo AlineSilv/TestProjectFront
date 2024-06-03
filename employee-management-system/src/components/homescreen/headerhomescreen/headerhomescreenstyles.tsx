@@ -92,7 +92,7 @@ export const AddNewButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #e64a19;
+    background-color: #EF6F2B;
   }
 `;
 
